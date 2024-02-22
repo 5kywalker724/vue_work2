@@ -7,7 +7,14 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/ProductsView.vue')
     }
-  }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/CartView.vue')
+    }
+  },
 ]
 
 const router = createRouter({

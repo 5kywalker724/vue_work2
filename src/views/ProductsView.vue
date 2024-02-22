@@ -8,7 +8,7 @@
         <a href="#">Войти в аккаунт</a>
       </p>
       <p class="nav-links">
-        <a href="#">Корзина</a>
+        <router-link to="/cart">Корзина</router-link>
       </p>
       <p class="nav-links">
         <a href="#">Оформленные заказы</a>
@@ -22,7 +22,7 @@
         <h3>{{ product.name }}</h3>
         <p>{{ product.description }}</p>
         <p>Цена: {{ product.price }}</p>
-        <button>Добавить в корзину</button>
+        <button @click="store.commit('addToCart', product)">Добавить в корзину</button>
       </div>
     </div>
   </div>

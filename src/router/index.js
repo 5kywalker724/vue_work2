@@ -5,23 +5,31 @@ const routes = [
     path: '/',
     name: 'products',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/ProductsView.vue')
+      return import('../views/ProductsView.vue')
     }
   },
   {
     path: '/cart',
     name: 'cart',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/CartView.vue')
+      return import('../views/CartView.vue')
     }
   },
   {
     path: '/order',
     name: 'order',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/OrderView.vue')
+      return import('../views/OrderView.vue')
     }
   },
+  {
+    path: '/registration',
+    name: 'registration',
+    component: function (){
+      return import('../views/RegistrationView.vue')
+    }
+
+  }
 ]
 
 const router = createRouter({

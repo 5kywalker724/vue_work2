@@ -2,7 +2,7 @@
   <div class="products">
     <nav>
       <p class="nav-links">
-        <a href="#">Регистрация</a>
+        <router-link to="/registration">Регистрация</router-link>
       </p>
       <p class="nav-links">
         <a href="#">Войти в аккаунт</a>
@@ -89,5 +89,3 @@ nav{
   margin-bottom: 30px;
 }
 </style>
-<script setup>
-</script>

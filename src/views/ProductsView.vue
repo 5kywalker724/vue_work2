@@ -5,7 +5,7 @@
         <router-link to="/registration">Регистрация</router-link>
       </p>
       <p class="nav-links">
-        <a href="#">Войти в аккаунт</a>
+        <router-link to="/login">Войти в аккаунт</router-link>
       </p>
       <p class="nav-links">
         <router-link to="/cart">Корзина</router-link>

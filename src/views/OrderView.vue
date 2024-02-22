@@ -15,7 +15,7 @@
         <p><b>Цена:</b> {{ product.price * product.quantity }}</p>
       </div>
       <p>--------------------------------------------------------------------------------------------</p>
-      <p><b>Цена заказа:</b></p>
+      <p><b>Цена заказа: {{ calculateTotalPrice(order) }}</b></p>
     </div>
   </div>
 </template>
@@ -29,6 +29,15 @@ export default {
       return store
     }
   },
+  methods: {
+    calculateTotalPrice(order){
+      let totalPrice = 0;
+      for(let i = 0; i < order.length; i++){
+        totalPrice += order[i].price * order[i].quantity;
+      }
+      return totalPrice;
+    }
+  }
 }
 
 </script>

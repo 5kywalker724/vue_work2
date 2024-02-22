@@ -50,6 +50,12 @@ export default createStore({
       let indexCart = state.realCart.indexOf(product);
       state.realCart.splice(indexCart, 1);
     },
+    orderCreate(state){
+      let newOrders = state.realCart.map(item => ({...item}));
+      state.orders.push(newOrders);
+      state.realCart.splice(0, state.realCart.length);
+      console.log(state.orders);
+    },
   },
   actions: {
   },

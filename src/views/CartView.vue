@@ -3,7 +3,7 @@
     <h2>Товары в корзине:</h2>
     <div class="cart-header">
       <router-link class="prevPage" to="/">Назад</router-link>
-      <a href="#" class="cartButton" v-show="store.state.realCart.length > 0">Оформить заказ</a>
+      <router-link class="cartButton" to="/order" v-show="store.state.realCart.length > 0" @click="store.commit('orderCreate')">Оформить заказ</router-link>
     </div>
     <div v-show="store.state.realCart.length === 0">
       <h2 class="msg">{ На данный момент товары в корзине отсутствуют! ]</h2>

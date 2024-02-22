@@ -1,20 +1,20 @@
 <template>
   <div class="products">
     <nav>
-      <p class="nav-links">
+      <p class="nav-links" v-show="store.state.user_token === null">
         <router-link to="/registration">Регистрация</router-link>
       </p>
-      <p class="nav-links">
+      <p class="nav-links" v-show="store.state.user_token === null">
         <router-link to="/login">Войти в аккаунт</router-link>
       </p>
-      <p class="nav-links">
+      <p class="nav-links" v-show="store.state.user_token !== null">
         <router-link to="/cart">Корзина</router-link>
       </p>
-      <p class="nav-links">
+      <p class="nav-links" v-show="store.state.user_token !== null">
         <router-link to="/order">Оформленные заказы</router-link>
       </p>
-      <p class="nav-links">
-        <a href="#">Выйти из аккаунта</a>
+      <p class="nav-links" v-show="store.state.user_token !== null">
+        <a href="#" @click="store.commit('logout')">Выйти из аккаунта</a>
       </p>
     </nav>
     <div class="product-list">
@@ -37,6 +37,9 @@ export default {
     }
   },
   mounted(){
+    if (localStorage.token !== undefined && localStorage.token !== null) {
+      store.state.user_token = localStorage.token;
+    }
     this.$store.commit('fetchProducts');
   }
 }

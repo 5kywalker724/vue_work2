@@ -103,6 +103,10 @@ export default createStore({
         window.location.href = "/";
       }
     },
+    logout(state){
+      state.user_token = null;
+      localStorage.clear();
+    }
   },
   actions: {
   },

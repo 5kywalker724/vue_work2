@@ -6,6 +6,10 @@ export default createStore({
     products: [],
     realCart: [],
     orders: [],
+    fio: '',
+    email: '',
+    password: '',
+    user_token: null
   },
   getters: {
   },
@@ -56,6 +60,25 @@ export default createStore({
       state.realCart.splice(0, state.realCart.length);
       console.log(state.orders);
     },
+    async registration(state) {
+
+      let userInfo = {
+        fio: state.fio,
+        email: state.email,
+        password: state.password
+      }
+
+      const data = await axios.post('https://jurapro.bhuser.ru/api-shop/signup', userInfo)
+          .then(function (response) {
+            console.log(response);
+            state.user_token = response.data.data.user_token;
+            localStorage.token = state.user_token;
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      console.log(data)
+    }
   },
   actions: {
   },

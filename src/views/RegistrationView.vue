@@ -2,7 +2,7 @@
   <div class="form-header">
     <router-link class="prevPage" to="/">Назад</router-link>
   </div>
-  <form>
+  <form @submit.prevent="store.commit('registration')">
     <label>ФИО: </label>
     <input type="text" required v-model="store.state.fio">
     <label>Эл. почта: </label>

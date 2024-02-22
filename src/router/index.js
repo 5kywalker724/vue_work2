@@ -15,6 +15,13 @@ const routes = [
       return import(/* webpackChunkName: "about" */ '../views/CartView.vue')
     }
   },
+  {
+    path: '/order',
+    name: 'order',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/OrderView.vue')
+    }
+  },
 ]
 
 const router = createRouter({

@@ -11,7 +11,7 @@
         <router-link to="/cart">Корзина</router-link>
       </p>
       <p class="nav-links">
-        <a href="#">Оформленные заказы</a>
+        <router-link to="/order">Оформленные заказы</router-link>
       </p>
       <p class="nav-links">
         <a href="#">Выйти из аккаунта</a>

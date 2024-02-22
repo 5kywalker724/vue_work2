@@ -35,6 +35,9 @@ export default {
     store() {
       return store
     }
+  },
+  mounted(){
+    this.$store.commit('fetchProducts');
   }
 }
 </script>

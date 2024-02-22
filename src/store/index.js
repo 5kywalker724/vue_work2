@@ -78,7 +78,31 @@ export default createStore({
             console.log(error)
           })
       console.log(data)
-    }
+
+      if(localStorage.token !== undefined && localStorage.token !== null){
+        window.location.href = "/login";
+      }
+    },
+    async login(state){
+
+      let userInfo = {
+        email: state.email,
+        password: state.password
+      }
+
+      const data = await axios.post('https://jurapro.bhuser.ru/api-shop/login', userInfo)
+          .then(function(response) {
+            state.user_token = response.data.data.user_token;
+            localStorage.token = state.user_token;
+          })
+          .catch(error =>{console.log(error)})
+
+      console.log(data);
+
+      if(localStorage.token !== undefined && localStorage.token !== null){
+        window.location.href = "/";
+      }
+    },
   },
   actions: {
   },
